@@ -274,12 +274,26 @@
 
       <script>
         function changerFond(couleur) {
-          // À compléter : Changer la couleur de fond du body
-          // et ajouter la classe "actif" à la boîte cliquée
+          document.body.style.backgroundColor = couleur;
+
+          const boites = document.querySelectorAll(".boite");
+
+          for (let i = 0; i < boites.length; i++) {
+            boites[i].classList.remove("actif");
+
+            if (boites[i].style.backgroundColor === couleur) {
+              boites[i].classList.add("actif");
+            }
+          }
         }
 
         function reinitialiserFond() {
-          // À compléter : Remettre le fond original et enlever toutes les classes "actif"
+          document.body.style.backgroundColor = "";
+
+          const boites = document.querySelectorAll(".boite");
+          for (let i = 0; i < boites.length; i++) {
+            boites[i].classList.remove("actif");
+          }
         }
       </script>
     </div>
