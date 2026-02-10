@@ -222,13 +222,18 @@
 
       <script>
         function colorierTous() {
-          // À compléter : Sélectionner tous les éléments avec la classe "item"
-          // et leur donner un fond jaune
+          const items = document.querySelectorAll(".item");
+          for (let i = 0; i < items.length; i++) {
+            items[i].style.backgroundColor = "fond-jaune";
+          }
         }
 
         function numeroteTous() {
-          // À compléter : Ajouter un numéro devant chaque item
-          // Exemple : "1. Item 1", "2. Item 2", etc.
+          const items = document.querySelectorAll(".item");
+          for (let i = 0; i < items.length; i++) {
+            let numero = i + 1;
+            items[i].innerText = numero + ". " + items[i].innerText;
+          }
         }
       </script>
     </div>
