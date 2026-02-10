@@ -157,11 +157,12 @@
 
       <script>
         function ajouterContenu() {
-          // À compléter : Ajouter "<h4>Nouveau titre</h4><p>Nouveau paragraphe</p>"
+          document.querySelector("#conteneur3").innerHTML =
+            "<h4>Title</h4><p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>";
         }
 
         function effacerContenu() {
-          // À compléter : Vider le contenu
+          document.querySelector("#conteneur3").innerHTML = "";
         }
       </script>
     </div>
