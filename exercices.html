@@ -463,11 +463,24 @@
 
       <script>
         function afficherOnglet(numero) {
-          // À compléter :
-          // 1. Cacher tous les contenus
-          // 2. Afficher le contenu sélectionné
-          // 3. Enlever la classe "actif" de tous les boutons
-          // 4. Ajouter la classe "actif" au bouton cliqué
+          const contenus = document.querySelectorAll(".contenu-onglet");
+
+          for (let i = 0; i < contenus.length; i++) {
+            contenus[i].classList.remove("visible");
+            contenus[i].classList.add("cache");
+          }
+
+          const contenuActif = document.querySelector("#contenu" + numero);
+          contenuActif.classList.remove("cache");
+          contenuActif.classList.add("visible");
+
+          const onglets = document.querySelectorAll(".onglet");
+
+          for (let i = 0; i < onglets.length; i++) {
+            onglets[i].classList.remove("actif");
+          }
+
+          onglets[numero - 1].classList.add("actif");
         }
       </script>
     </div>
