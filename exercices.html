@@ -398,19 +398,35 @@
 
       <script>
         function incrementer() {
-          // À compléter : Augmenter le compteur et ajuster la couleur
+          const compteur = document.querySelector("#compteur");
+          let valeur = parseInt(compteur.innerText);
+          valeur++;
+          compteur.innerText = valeur;
+          ajusterCouleur(valeur);
         }
 
         function decrementer() {
-          // À compléter : Diminuer le compteur et ajuster la couleur
+          const compteur = document.querySelector("#compteur");
+          let valeur = parseInt(compteur.innerText);
+          valeur--;
+          compteur.innerText = valeur;
+          ajusterCouleur(valeur);
         }
 
         function reinitialiser() {
-          // À compléter : Remettre à 0 et couleur noire
+          const compteur = document.querySelector("#compteur");
+          compteur.innerText = "0";
+          ajusterCouleur(0);
         }
 
         function ajusterCouleur(valeur) {
-          // À compléter : Fonction helper pour ajuster la couleur
+          const compteur = document.querySelector("#compteur");
+          compteur.classList.remove("rouge", "vert");
+          if (valeur < 0) {
+            compteur.classList.add("rouge");
+          } else if (valeur > 0) {
+            compteur.classList.add("vert");
+          }
         }
       </script>
     </div>
