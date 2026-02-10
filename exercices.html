@@ -354,16 +354,26 @@
 
       <script>
         function ajouterTache() {
-          // À compléter : Ajouter une nouvelle tâche à la liste
-          // Format : <li>Tâche <button onclick="supprimerTache(this)">X</button></li>
+          const input = document.querySelector("#tache");
+          const texteTache = input.value;
+
+          if (texteTache === "") return;
+
+          const liste = document.querySelector("#listeTaches");
+
+          liste.innerHTML += `<li>${texteTache} <button onclick="supprimerTache(this)">X</button></li>`;
+
+          input.value = "";
         }
 
         function supprimerTache(bouton) {
-          // À compléter : Supprimer l'élément parent du bouton (le <li>)
+          const tacheLi = bouton.parentElement;
+
+          tacheLi.remove();
         }
 
         function effacerTout() {
-          // À compléter : Vider toute la liste
+          document.querySelector("#listeTaches").innerHTML = "";
         }
       </script>
     </div>
