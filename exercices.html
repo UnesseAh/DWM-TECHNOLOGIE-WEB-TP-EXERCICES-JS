@@ -185,15 +185,19 @@
 
       <script>
         function ajouterClasse() {
-          // À compléter : Ajouter les classes "rouge" et "grand-texte"
+          document
+            .querySelector("#paragraphe4")
+            .classList.add("rouge", "grand-texte");
         }
 
         function enleverClasse() {
-          // À compléter : Enlever les classes "rouge" et "grand-texte"
+          document
+            .querySelector("#paragraphe4")
+            .classList.remove("rouge", "grand-texte");
         }
 
         function basculerClasse() {
-          // À compléter : Utiliser classList.toggle() pour "bordure"
+          document.querySelector("#paragraphe4").classList.toggle("bordure");
         }
       </script>
     </div>
